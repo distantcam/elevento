@@ -1,0 +1,25 @@
+---
+pagination:
+  data: pkg.links
+  size: 1
+  alias: link
+permalink: "{{link}}/"
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>{{ link }} Redirect</title>
+
+  <link rel="stylesheet" href="{{ '/site.css' | url }}" />
+</head>
+<body class="flex items-center justify-center w-full h-screen bg-slate-100 dark:bg-slate-900">
+  <p class="text-5xl text-black dark:text-slate-300">Redirecting to <a class="text-blue-700 capitalize" href="{{ pkg.links[link] }}">{{ link }}</a></p>
+  <script>
+    window.location.replace("{{ pkg.links[link] }}");
+  </script>
+</body>
+</html>
